@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/logo.png">
+    <title>Contact | Deana Mariz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+        <a href="index.html">DEANA MARIZ</a>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="listings.html">Listings</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <a href="contact.html" class="contact-box">Contact</a>
+    </div>
+</nav>
+
+    <main class="container">
+    <h1>Connect</h1>
+    <div class="divider"></div>
+    
+    <div class="contact-wrapper">
+        <div class="contact-info">
+            <h3>Direct Contact</h3>
+            <p>deana@example.com</p>
+            <p>+63 917 000 0000</p>
+            <br><br>
+            <h3>Office</h3>
+            <p>123 Luxury Lane, Makati City</p>
+            <p>Metro Manila, Philippines</p>
+        </div>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" required>
+            </div>
+            <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Interested In</label>
+                    <input type="text" placeholder="e.g. Buying, Selling, Portfolio Review">
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Inquiry</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>&copy; 2026 Deana Mariz</footer>
+
+    <script>
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('active');
+        menuLinks.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>

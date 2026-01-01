@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/logo.png">
+    <title>About | Deana Mariz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="logo">
+        <a href="index.html">DEANA MARIZ</a>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="listings.html">Listings</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <a href="contact.html" class="contact-box">Contact</a>
+    </div>
+</nav>
+
+    <main class="container">
+    <div class="about-grid">
+        <div class="about-image-container">
+            <div style="background: #001f4d; width: 100%; height: 600px; display: flex; align-items: center; justify-content: center; color: #D4AF37;">
+                [ PHOTOGRAPHY PLACEHOLDER ]
+            </div>
+        </div>
+        <div class="about-text">
+            <h1>The Vision</h1>
+            <div class="divider"></div>
+            <p>Elevating the standard of real estate through a lens of excellence and bespoke service. With a deep understanding of the market and an eye for luxury, Deana Mariz provides a tailored experience for every client.</p>
+            <p>Our approach is simple: combine sophisticated marketing with relentless advocacy. Whether you are seeking a modern sanctuary or a classic estate, we bring your vision to life with precision and grace.</p>
+        </div>
+    </div>
+</main>
+
+    <footer>&copy; 2026 Deana Mariz</footer>
+
+    <script>
+    const menu = document.querySelector('#mobile-menu');
+    const menuLinks = document.querySelector('.nav-links');
+
+    menu.addEventListener('click', function() {
+        menu.classList.toggle('active');
+        menuLinks.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>
