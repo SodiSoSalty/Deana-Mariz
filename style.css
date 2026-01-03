@@ -1,5 +1,6 @@
-/* Palette: Midnight Blue (#001233), Gold (#D4AF37), White (#FFFFFF) */
-
+/* =========================================
+   1. GLOBAL RESET & BASE STYLES
+   ========================================= */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +15,18 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigation - Clean and Airy */
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #D4AF37;
+}
+
+/* =========================================
+   2. NAVIGATION BAR
+   ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -26,6 +38,10 @@ body {
     z-index: 1000;
     height: 100px;
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.logo {
+    white-space: nowrap; /* Prevents name from stacking */
 }
 
 .logo a {
@@ -53,7 +69,9 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a:hover { color: #D4AF37; }
+.nav-links a:hover { 
+    color: #D4AF37; 
+}
 
 .nav-right {
     display: flex;
@@ -77,7 +95,24 @@ body {
     color: #001233;
 }
 
-/* Hero Section - Centered and Modern */
+/* Hamburger Menu Icon (Hidden on Desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.bar {
+    width: 28px;
+    height: 1px;
+    background-color: #D4AF37;
+    transition: 0.3s;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
 .hero {
     position: relative;
     height: 85vh;
@@ -118,6 +153,8 @@ body {
     border-bottom: 1px solid #D4AF37;
     color: #fff;
     padding: 10px 0;
+    padding-bottom: 5px;
+    margin-top: 30px;
     text-decoration: none;
     font-family: 'Georgia', serif;
     font-size: 1rem;
@@ -130,7 +167,9 @@ body {
     color: #D4AF37;
 }
 
-/* Page Containers */
+/* =========================================
+   4. LAYOUT & CONTAINERS
+   ========================================= */
 .container {
     max-width: 1200px;
     margin: 80px auto;
@@ -151,6 +190,7 @@ body {
     gap: 30px;
 }
 
+/* --- VISUAL POLISH ADDED HERE --- */
 .placeholder-box {
     background: #001f4d;
     height: 450px;
@@ -164,9 +204,18 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
+    transition: 0.5s ease; /* Smooth transition */
 }
 
-/* Reviews Styling Improvement */
+.placeholder-box:hover {
+    border: 1px solid rgba(212, 175, 55, 0.5); /* Brighter gold border */
+    background: #002a66; /* Slightly lighter blue */
+    cursor: pointer;
+}
+
+/* =========================================
+   5. COMPONENTS (Reviews, Socials)
+   ========================================= */
 .review-card {
     background: rgba(255, 255, 255, 0.03);
     padding: 40px;
@@ -181,49 +230,29 @@ body {
     font-size: 1.2rem;
 }
 
-/* Footer */
-footer {
-    padding: 80px 20px;
-    text-align: center;
-    border-top: 1px solid rgba(212, 175, 55, 0.1);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.7rem;
-}
-
-/* Social Links Container */
+/* Social Links */
 .social-links {
     display: flex;
-    gap: 25px; /* Adjusts the space between the icons */
+    gap: 25px;
     align-items: center;
 }
 
-/* Individual Icons */
 .social-links a {
     color: #ffffff;
-    font-size: 1.4rem; /* Makes the icons bigger */
+    font-size: 1.4rem;
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
     display: inline-block;
 }
 
-/* Hover Effect */
 .social-links a:hover {
     color: #D4AF37;
-    transform: translateY(-3px); /* Subtle lift effect when hovering */
+    transform: translateY(-3px);
 }
 
-/* Typography & Headers */
-h1 {
-    font-family: 'Georgia', serif;
-    font-size: 3rem;
-    font-weight: 300;
-    letter-spacing: 2px;
-    margin-bottom: 10px;
-    color: #D4AF37;
-}
-
-/* About Section - Asymmetric Layout */
+/* =========================================
+   6. PAGE SPECIFIC: ABOUT
+   ========================================= */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -266,7 +295,9 @@ h1 {
     line-height: 1.8;
 }
 
-/* Contact Page - Minimalist Form */
+/* =========================================
+   7. PAGE SPECIFIC: CONTACT
+   ========================================= */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -328,9 +359,23 @@ h1 {
     color: #001233;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
 
-/* TABLET REFINEMENT (769px to 1100px) */
+/* =========================================
+   9. RESPONSIVE DESIGN
+   ========================================= */
+
+/* Tablet (769px - 1100px) */
 @media (max-width: 1100px) and (min-width: 769px) {
     .navbar {
         padding: 0 3%;
@@ -343,14 +388,13 @@ h1 {
     }
 
     .nav-links {
-        gap: 15px; /* Tightened to make room for icons */
+        gap: 15px; 
     }
 
     .nav-links a {
         font-size: 0.8rem;
     }
 
-    /* RESTORED ICONS FOR TABLET */
     .social-links {
         display: flex !important; 
         gap: 15px;
@@ -365,20 +409,19 @@ h1 {
     }
 }
 
-/* MOBILE PHONES (Screens under 768px) */
+/* Mobile (Under 768px) */
 @media (max-width: 768px) {
-    /* --- Header / Navbar Fix --- */
+    /* Header Re-layout */
     .navbar {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Two distinct columns */
-        grid-template-rows: auto auto;    /* Two distinct rows */
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
         height: auto;
         padding: 20px 5%;
         gap: 15px;
         background: #001233;
     }
 
-    /* Logo stays top left */
     .logo {
         grid-column: 1;
         grid-row: 1;
@@ -386,88 +429,30 @@ h1 {
         align-self: center;
     }
 
-    /* Hamburger stays top right */
     .menu-toggle {
         display: flex !important;
         grid-column: 2;
         grid-row: 1;
         justify-self: end;
         align-self: center;
+        z-index: 1001;
     }
 
-    /* Socials and Contact move to a NEW row below to avoid crowding */
     .nav-right {
-        grid-column: 1 / span 2; /* Spans full width */
+        grid-column: 1 / span 2;
         grid-row: 2;
         display: flex;
-        justify-content: space-between; /* Socials on left, Contact on right */
+        justify-content: space-between;
         align-items: center;
         border-top: 1px solid rgba(212, 175, 55, 0.15);
         padding-top: 15px;
     }
 
-    /* --- About Page Fix --- */
-    .about-grid {
-        grid-template-columns: 1fr; /* Stack the image on top of the text */
-        gap: 40px;
-        margin-top: 30px;
-    }
-
-    .about-image-container {
-        width: 100%;
-        max-width: 400px; /* Prevents the image from getting too massive */
-        margin: 0 auto;   /* Centers the image container */
-        padding-top: 0;
-    }
-
-    .about-image-container::before {
-        /* Adjusting the gold frame so it doesn't cause horizontal scrolling on mobile */
-        left: 10px;
-        top: 10px;
-        width: 100%;
-        height: 100%;
-    }
-
-    .about-text {
-        padding-top: 0;
-        text-align: left;
-    }
-
-    h1 {
-        font-size: 2.2rem; /* Shrinking the title so it doesn't wrap awkwardly */
-    }
-
-    .divider {
-        margin: 15px 0 25px 0;
-    }
-
-}
-/* --- Hamburger Menu Styling --- */
-.menu-toggle {
-    display: none; /* Hidden on desktop */
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-}
-
-.bar {
-    width: 28px;
-    height: 1px; /* Thin lines for luxury feel */
-    background-color: #D4AF37;
-    transition: 0.3s;
-}
-
-/* Mobile Menu Overlay Styles */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-        z-index: 1001;
-    }
-
+    /* Mobile Menu Overlay */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* Hidden off-screen to the right */
+        right: -100%;
         height: 100vh;
         width: 80%;
         background: #000b1a;
@@ -479,22 +464,43 @@ h1 {
     }
 
     .nav-links.active {
-        right: 0; /* Slides in */
+        right: 0;
     }
 
-    /* Animate Hamburger into an 'X' when active */
+
     .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
     .menu-toggle.active .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .menu-toggle.active .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-}
 
-.learn-more-btn {
-    margin-top: 30px;
-    border-bottom: 1px solid #D4AF37;
-    padding-bottom: 5px;
-    display: inline-block;
-}
 
-.logo {
-    white-space: nowrap; /* Prevents the name from stacking into two lines */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .about-image-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-top: 0;
+    }
+
+    .about-image-container::before {
+        left: 10px;
+        top: 10px;
+    }
+
+    .about-text {
+        padding-top: 0;
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .divider {
+        margin: 15px 0 25px 0;
+    }
 }
