@@ -77,26 +77,8 @@
 
     <footer>&copy; 2026 Deana Mariz</footer>
 
-    <script>
-    const menu = document.querySelector('#mobile-menu');
-    const menuLinks = document.querySelector('.nav-links');
-
-    menu.addEventListener('click', function() {
-        menu.classList.toggle('active');
-        menuLinks.classList.toggle('active');
-    });
-
-    
-    document.getElementById('inquiryForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const btn = document.querySelector('.btn-submit');
-        btn.textContent = "Message Sent!";
-        btn.style.background = "#D4AF37";
-        btn.style.color = "#001233";
-        this.reset();
-        alert("Thank you for your inquiry, Deana will get back to you shortly.");
-    });
-</script>
+    <script src="script.js"></script>
+</body>
 
 </body>
 </html>

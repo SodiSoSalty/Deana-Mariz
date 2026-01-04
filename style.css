@@ -1,6 +1,10 @@
 /* =========================================
    1. GLOBAL RESET & BASE STYLES
    ========================================= */
+   html {
+    scroll-behavior: smooth; /* Enables the gliding effect */
+
+}
 * {
     margin: 0;
     padding: 0;
@@ -66,11 +70,29 @@ h1 {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: 0.3s;
+    position: relative; /* Needed for the underline positioning */
+    padding-bottom: 5px;
 }
 
-.nav-links a:hover { 
-    color: #D4AF37; 
+/* Create the invisible line */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+/* Animate the line on hover */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #D4AF37; /* Keep the color change too */
 }
 
 .nav-right {
@@ -503,4 +525,246 @@ footer {
     .divider {
         margin: 15px 0 25px 0;
     }
+}
+
+/* =========================================
+   10. MISSION SECTION (New Addition)
+   ========================================= */
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Text takes more space, Image takes less */
+    gap: 80px;
+    align-items: flex-start;
+    margin-top: 100px; /* Spacing between Vision and Mission */
+}
+
+/* Flip the decorative border for the right-side image */
+.mission-grid .about-image-container::before {
+    left: auto;
+    right: -20px; 
+}
+
+/* Mobile Responsiveness for Mission Section */
+@media (max-width: 768px) {
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    /* Keeps the image on top on mobile devices */
+    .mission-grid .about-image-container {
+        order: -1; 
+    }
+}
+
+/* =========================================
+   11. PORTFOLIO HOVER EFFECTS (New Addition)
+   ========================================= */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    height: 450px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Overlay that holds the text */
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 18, 51, 0.9); /* Dark Navy with transparency */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Hover Actions */
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Show on hover */
+}
+
+.portfolio-item:hover .portfolio-img {
+    transform: scale(1.1); /* Zoom effect on image */
+}
+
+/* Text Styling inside the overlay */
+.portfolio-overlay h3 {
+    color: #D4AF37;
+    font-family: 'Georgia', serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.portfolio-overlay p {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.portfolio-overlay .price {
+    color: #D4AF37;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   12. CUSTOM POPUP MODAL (New Addition)
+   ========================================= */
+.custom-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 18, 51, 0.85); /* Dark Navy transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+}
+
+.custom-modal {
+    background: #001233;
+    border: 2px solid #D4AF37;
+    padding: 50px;
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    transform: translateY(30px); /* Start slightly lower */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+}
+
+/* State: Active (Visible) */
+.custom-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.custom-modal-overlay.active .custom-modal {
+    transform: translateY(0);
+}
+
+/* Modal Content Styling */
+.modal-icon {
+    font-size: 3rem;
+    color: #D4AF37;
+    margin-bottom: 20px;
+}
+
+.custom-modal h2 {
+    font-family: 'Georgia', serif;
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.custom-modal p {
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.modal-close-btn {
+    background: #D4AF37;
+    color: #001233;
+    border: none;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.modal-close-btn:hover {
+    background: #fff;
+}
+
+/* Define the animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply it to the main container */
+main {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Apply it to the Hero text specifically */
+.hero-content {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* =========================================
+   13. ACTIVE STATE & SCROLL BUTTON (New Addition)
+   ========================================= */
+
+/* Keep the gold underline visible for the Active Page */
+.nav-links a.active {
+    color: #D4AF37;
+}
+
+.nav-links a.active::after {
+    width: 100%; /* Keeps the underline drawn */
+}
+
+/* Scroll to Top Button Styling */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #D4AF37;
+    color: #001233;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none; /* Prevents clicking when hidden */
+    transition: all 0.3s ease;
+    z-index: 2000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+    transform: translateY(-5px); /* Little hop effect */
+    background: #fff;
+    color: #D4AF37;
 }
