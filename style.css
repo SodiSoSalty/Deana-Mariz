@@ -247,9 +247,24 @@ h1 {
 }
 
 .review-card p {
-    font-style: italic;
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif; /* The new professional font */
+    font-size: 1rem;     /* Montserrat is naturally slightly larger, so 1rem is good */
+    letter-spacing: 0.5px; /* Adds a little "air" for elegance */
+    line-height: 1.8;
+    color: #f0f0f0;
+    font-weight: 300;    /* Light weight looks very sophisticated */
+}
+
+/* Optional: Add quotes styling to keep it artistic without changing the font */
+.review-card p::before {
+    content: "“";
+    font-family: 'Georgia', serif; /* Keep the quote mark fancy */
+    font-size: 3rem;
+    color: #D4AF37;
+    line-height: 0;
+    vertical-align: -15px;
+    margin-right: 10px;
 }
 
 /* Social Links */
