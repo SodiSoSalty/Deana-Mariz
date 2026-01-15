@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 if (btn) btn.textContent = "Message Sent!";
                 this.reset();
-                
                 modal.classList.add('active');
             }, 1000); 
         });
@@ -93,4 +92,68 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', (e) => {
+            e.preventDefault();
+            const details = question.parentElement;
+            const answer = details.querySelector('.faq-answer');
+            
+            document.querySelectorAll('details[open]').forEach(otherDetails => {
+                if (otherDetails !== details) {
+                    otherDetails.removeAttribute('open');
+                    otherDetails.querySelector('.faq-answer').style.maxHeight = null;
+                }
+            });
+
+            if (details.open) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                
+                requestAnimationFrame(() => {
+                    answer.style.maxHeight = '0';
+                    answer.style.opacity = '0';
+                });
+
+                setTimeout(() => {
+                    details.removeAttribute('open');
+                }, 300);
+                
+            } else {
+                details.setAttribute('open', '');
+                answer.style.maxHeight = '0';
+                answer.style.opacity = '0';
+                
+                requestAnimationFrame(() => {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    answer.style.opacity = '1';
+                });
+                
+                setTimeout(() => {
+                    answer.style.maxHeight = 'none';
+                }, 300);
+            }
+        });
+    });
 });
+
+function filterListings() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toUpperCase();
+    const grid = document.querySelector('.grid');
+    const items = grid.getElementsByClassName('portfolio-item');
+
+    for (let i = 0; i < items.length; i++) {
+        let title = items[i].querySelector("h3");
+        let desc = items[i].querySelector("p");
+        
+        let txtValue = (title.textContent || title.innerText) + " " + (desc.textContent || desc.innerText);
+        
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}

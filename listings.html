@@ -29,9 +29,8 @@
 
         <div class="nav-right">
             <div class="social-links">
-                <a href="https://www.facebook.com/deana.padullon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/deana.padullon" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/deanabytldc/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             </div>
             <a href="contact.html" class="contact-box">Contact</a>
         </div>
@@ -40,6 +39,14 @@
     <main class="container">
         <h1>Current Listings</h1>
         <div class="divider"></div>
+
+        <div class="listing-search-wrapper">
+            <div class="listing-search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search condos, locations, or price..." onkeyup="filterListings()">
+            </div>
+        </div>
+
         <div class="grid">
             <div class="portfolio-item">
                 <img src="Images/listing 1.jpeg" alt="Vertica Studio" class="portfolio-img">
