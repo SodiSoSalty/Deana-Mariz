@@ -17,6 +17,7 @@ body {
     background-color: #001233;
     color: #ffffff;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 h1 {
@@ -138,7 +139,7 @@ h1 {
 .hero {
     position: relative;
     height: 85vh;
-    background: linear-gradient(rgba(0,18,51,0.4), rgba(0,18,51,0.4)), url('Images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,18,51,0.4), rgba(0,18,51,0.4)), url('Images/hero-bg.webp') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
