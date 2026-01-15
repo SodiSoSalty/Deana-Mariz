@@ -749,14 +749,14 @@ footer {
     }
 }
 
-/* Apply it to the main container */
-main {
-    animation: fadeInUp 0.8s ease-out forwards;
-}
-
-/* Apply it to the Hero text specifically */
-.hero-content {
-    animation: fadeInUp 1s ease-out forwards;
+/* ONLY animate on Desktop (screens wider than 768px) */
+@media (min-width: 769px) {
+    main {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .hero-content {
+        animation: fadeInUp 1s ease-out forwards;
+    }
 }
 
 /* =========================================
