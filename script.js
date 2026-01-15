@@ -97,38 +97,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     faqQuestions.forEach(question => {
         question.addEventListener('click', (e) => {
-            e.preventDefault();
+            e.preventDefault(); 
             const details = question.parentElement;
             const answer = details.querySelector('.faq-answer');
             
+
             document.querySelectorAll('details[open]').forEach(otherDetails => {
                 if (otherDetails !== details) {
-                    otherDetails.removeAttribute('open');
-                    otherDetails.querySelector('.faq-answer').style.maxHeight = null;
+                    const otherAnswer = otherDetails.querySelector('.faq-answer');
+
+                    otherAnswer.style.maxHeight = otherAnswer.scrollHeight + 'px';
+                    
+                    setTimeout(() => {
+                        otherAnswer.style.maxHeight = '0';
+                        otherAnswer.style.opacity = '0';
+                    }, 10);
+
+                    setTimeout(() => {
+                        otherDetails.removeAttribute('open');
+                    }, 300);
                 }
             });
 
             if (details.open) {
+
                 answer.style.maxHeight = answer.scrollHeight + 'px';
-                
-                requestAnimationFrame(() => {
+
+                setTimeout(() => {
                     answer.style.maxHeight = '0';
                     answer.style.opacity = '0';
-                });
+                }, 10);
 
                 setTimeout(() => {
                     details.removeAttribute('open');
                 }, 300);
                 
             } else {
+
                 details.setAttribute('open', '');
+                
                 answer.style.maxHeight = '0';
                 answer.style.opacity = '0';
                 
-                requestAnimationFrame(() => {
+                setTimeout(() => {
                     answer.style.maxHeight = answer.scrollHeight + 'px';
                     answer.style.opacity = '1';
-                });
+                }, 10);
                 
                 setTimeout(() => {
                     answer.style.maxHeight = 'none';
