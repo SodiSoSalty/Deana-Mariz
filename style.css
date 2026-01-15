@@ -136,14 +136,25 @@ h1 {
 /* =========================================
    3. HERO SECTION
    ========================================= */
+/* Existing Hero Section (Desktop Default) */
 .hero {
     position: relative;
     height: 85vh;
+    /* Ensure this points to your desktop image */
     background: linear-gradient(rgba(0,18,51,0.4), rgba(0,18,51,0.4)), url('Images/hero-bg.webp') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+/* ADD THIS: Mobile Override (Under 768px) */
+@media (max-width: 768px) {
+    .hero {
+        /* Loads the lighter image on mobile */
+        background: linear-gradient(rgba(0,18,51,0.4), rgba(0,18,51,0.4)), url('Images/hero-bg-mobile.webp') no-repeat center center/cover;
+        height: 70vh; /* Optional: Make hero slightly shorter on mobile to save space */
+    }
 }
 
 .hero-content h1 {
