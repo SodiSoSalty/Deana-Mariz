@@ -500,6 +500,13 @@ footer {
         box-shadow: -10px 0 20px rgba(0,0,0,0.5);
     }
 
+    .nav-links a {
+    font-size: 1.2rem; /* Make text bigger */
+    padding: 15px 0;   /* More space to tap */
+    width: 100%;       /* Full width tap area */
+    text-align: center;
+}
+
     .nav-links.active {
         right: 0;
     }
@@ -782,4 +789,240 @@ main {
     transform: translateY(-5px); /* Little hop effect */
     background: #fff;
     color: #D4AF37;
+}
+
+/* Search Bar Styles */
+.search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 15px 20px;
+    padding-right: 50px; /* Space for icon */
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #D4AF37;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 30px; /* Rounded corners */
+    outline: none;
+    transition: 0.3s;
+}
+
+#searchInput:focus {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #D4AF37;
+}
+
+/* =========================================
+   FAQ SECTION STYLING
+   ========================================= */
+
+/* Center the whole section */
+.faq-section {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+/* The container for the cards */
+.faq-container {
+    max-width: 800px; /* Controls width so it doesn't stretch too wide */
+    margin: 0 auto;
+    text-align: left; /* Keeps text aligned left inside the center box */
+}
+
+/* The Individual Card */
+.faq-card {
+    background: rgba(255, 255, 255, 0.02); /* Very subtle background */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Dim gold border */
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-card:hover {
+    border-color: #D4AF37; /* Bright gold on hover */
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* The Question (Clickable Header) */
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between; /* Pushes icon to the right */
+    align-items: center;
+    list-style: none; /* Removes default triangle */
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* Remove default triangle for Webkit browsers */
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+/* The Icon (+ sign) */
+.faq-icon {
+    color: #D4AF37;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate icon when open */
+.faq-card[open] .faq-icon {
+    transform: rotate(45deg); /* Turns + into x */
+}
+
+/* UPDATED FAQ STYLES FOR ANIMATION */
+
+/* The Wrapper (slides open/closed) */
+.faq-answer {
+    overflow: hidden; /* Hides content when closed */
+    transition: all 0.3s ease-out; /* Smooth sliding speed */
+    opacity: 0;
+    max-height: 0; /* Start closed by default logic */
+}
+
+/* The Content inside (holds the spacing) */
+.faq-answer p {
+    padding: 20px; /* Padding moved here to prevent "jumping" */
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    margin: 0;
+}
+
+/* When open, we utilize JS to handle height, but this helper keeps opacity correct */
+.faq-card[open] .faq-answer {
+    opacity: 1;
+    /* max-height is handled by JS for perfect sliding */
+}
+
+/* =========================================
+   SEARCH BAR STYLES (Add to style.css)
+   ========================================= */
+.search-container {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Gold border */
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin-right: 20px;
+    transition: 0.3s;
+}
+
+.search-container:hover,
+.search-container:focus-within {
+    border-color: #D4AF37;
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.search-container input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    width: 120px; /* Adjust width as needed */
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-container button {
+    background: transparent;
+    border: none;
+    color: #D4AF37;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .search-container {
+        margin: 10px 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .search-container input {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   LISTINGS SEARCH BAR (Clean Version)
+   ========================================= */
+.listing-search-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the bar horizontally */
+    margin-bottom: 40px;     /* Adds space between search and the listings */
+    width: 100%;
+}
+
+.listing-search-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Controls how wide the bar gets */
+    height: 50px;
+    background: transparent;
+    border: 1px solid #D4AF37; /* The single Gold border */
+    border-radius: 25px;       /* Fully rounded corners */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.listing-search-box:hover {
+    background: rgba(212, 175, 55, 0.05); /* Subtle glow on hover */
+}
+
+/* The Magnifying Glass Icon */
+.search-icon {
+    color: #D4AF37;
+    margin-right: 15px;
+    font-size: 1rem;
+}
+
+/* THE FIX: Removes the inner box/border */
+.listing-search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;      /* <--- Removes the inner box line */
+    outline: none;     /* <--- Removes the blue focus glow */
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Placeholder Text Color */
+.listing-search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300;
 }
