@@ -653,7 +653,7 @@ h1 {
 
 .search-icon {
     position: absolute;
-    right: 20px;
+    right: 35px;
     top: 50%;
     transform: translateY(-50%);
     color: #D4AF37;
@@ -737,6 +737,7 @@ h1 {
     color: #fff;
     font-size: 1rem;
     font-family: 'Segoe UI', sans-serif;
+    padding-right: 40px;
 }
 
 .listing-search-box input::placeholder {
