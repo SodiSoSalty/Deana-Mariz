@@ -81,13 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollBtn);
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollBtn.classList.add('visible');
-        } else {
-            scrollBtn.classList.remove('visible');
-        }
-    });
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollBtn.classList.add('visible');
+    } else {
+        scrollBtn.classList.remove('visible');
+    }
+}, { passive: true });
 
     scrollBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });

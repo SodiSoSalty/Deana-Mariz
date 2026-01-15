@@ -1,10 +1,7 @@
-/* =========================================
-   1. GLOBAL RESET & BASE STYLES
-   ========================================= */
-   html {
-    scroll-behavior: smooth; /* Enables the gliding effect */
-
+html {
+    scroll-behavior: smooth;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -29,9 +26,6 @@ h1 {
     color: #D4AF37;
 }
 
-/* =========================================
-   2. NAVIGATION BAR
-   ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -46,7 +40,7 @@ h1 {
 }
 
 .logo {
-    white-space: nowrap; /* Prevents name from stacking */
+    white-space: nowrap;
 }
 
 .logo a {
@@ -71,11 +65,10 @@ h1 {
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    position: relative; /* Needed for the underline positioning */
+    position: relative;
     padding-bottom: 5px;
 }
 
-/* Create the invisible line */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -87,13 +80,12 @@ h1 {
     transition: width 0.3s ease;
 }
 
-/* Animate the line on hover */
 .nav-links a:hover::after {
     width: 100%;
 }
 
 .nav-links a:hover {
-    color: #D4AF37; /* Keep the color change too */
+    color: #D4AF37;
 }
 
 .nav-right {
@@ -118,7 +110,6 @@ h1 {
     color: #001233;
 }
 
-/* Hamburger Menu Icon (Hidden on Desktop) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -133,14 +124,9 @@ h1 {
     transition: 0.3s;
 }
 
-/* =========================================
-   3. HERO SECTION
-   ========================================= */
-/* Existing Hero Section (Desktop Default) */
 .hero {
     position: relative;
     height: 85vh;
-    /* Ensure this points to your desktop image */
     background: linear-gradient(rgba(0,18,51,0.4), rgba(0,18,51,0.4)), url('Images/hero-bg.webp') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -148,18 +134,16 @@ h1 {
     text-align: center;
 }
 
-/* ADD THIS: Mobile Override (Under 768px) */
 @media (max-width: 768px) {
     .hero {
-        /* Loads the lighter image on mobile */
         background: linear-gradient(rgba(0,18,51,0.4), rgba(0,18,51,0.4)), url('Images/hero-bg-mobile.webp') no-repeat center center/cover;
-        height: 70vh; /* Optional: Make hero slightly shorter on mobile to save space */
+        height: 70vh;
     }
 }
 
 .hero-content h1 {
     font-family: 'Georgia', serif;
-    font-size: clamp(3rem, 8vw, 5rem); /* Responsive sizing */
+    font-size: clamp(3rem, 8vw, 5rem);
     color: #fff;
     font-weight: 300;
     margin-bottom: 10px;
@@ -201,9 +185,6 @@ h1 {
     color: #D4AF37;
 }
 
-/* =========================================
-   4. LAYOUT & CONTAINERS
-   ========================================= */
 .container {
     max-width: 1200px;
     margin: 80px auto;
@@ -217,14 +198,12 @@ h1 {
     margin: 20px 0 40px 0;
 }
 
-/* Grid for Listings/Portfolio */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-/* --- VISUAL POLISH ADDED HERE --- */
 .placeholder-box {
     background: #001f4d;
     height: 450px;
@@ -238,18 +217,15 @@ h1 {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
-    transition: 0.5s ease; /* Smooth transition */
+    transition: 0.5s ease;
 }
 
 .placeholder-box:hover {
-    border: 1px solid rgba(212, 175, 55, 0.5); /* Brighter gold border */
-    background: #002a66; /* Slightly lighter blue */
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    background: #002a66;
     cursor: pointer;
 }
 
-/* =========================================
-   5. COMPONENTS (Reviews, Socials)
-   ========================================= */
 .review-card {
     background: rgba(255, 255, 255, 0.03);
     padding: 40px;
@@ -260,18 +236,17 @@ h1 {
 
 .review-card p {
     font-style: normal;
-    font-family: 'Montserrat', sans-serif; /* The new professional font */
-    font-size: 1rem;     /* Montserrat is naturally slightly larger, so 1rem is good */
-    letter-spacing: 0.5px; /* Adds a little "air" for elegance */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
     line-height: 1.8;
     color: #f0f0f0;
-    font-weight: 300;    /* Light weight looks very sophisticated */
+    font-weight: 300;
 }
 
-/* Optional: Add quotes styling to keep it artistic without changing the font */
 .review-card p::before {
     content: "“";
-    font-family: 'Georgia', serif; /* Keep the quote mark fancy */
+    font-family: 'Georgia', serif;
     font-size: 3rem;
     color: #D4AF37;
     line-height: 0;
@@ -279,7 +254,6 @@ h1 {
     margin-right: 10px;
 }
 
-/* Social Links */
 .social-links {
     display: flex;
     gap: 25px;
@@ -299,9 +273,6 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* =========================================
-   6. PAGE SPECIFIC: ABOUT
-   ========================================= */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -344,9 +315,6 @@ h1 {
     line-height: 1.8;
 }
 
-/* =========================================
-   7. PAGE SPECIFIC: CONTACT
-   ========================================= */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -408,9 +376,6 @@ h1 {
     color: #001233;
 }
 
-/* =========================================
-   8. FOOTER
-   ========================================= */
 footer {
     padding: 80px 20px;
     text-align: center;
@@ -420,11 +385,6 @@ footer {
     font-size: 0.7rem;
 }
 
-/* =========================================
-   9. RESPONSIVE DESIGN
-   ========================================= */
-
-/* Tablet (769px - 1100px) */
 @media (max-width: 1100px) and (min-width: 769px) {
     .navbar {
         padding: 0 3%;
@@ -458,9 +418,7 @@ footer {
     }
 }
 
-/* Mobile (Under 768px) */
 @media (max-width: 768px) {
-    /* Header Re-layout */
     .navbar {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -497,7 +455,6 @@ footer {
         padding-top: 15px;
     }
 
-    /* Mobile Menu Overlay */
     .nav-links {
         position: fixed;
         top: 0;
@@ -513,9 +470,9 @@ footer {
     }
 
     .nav-links a {
-    font-size: 1.2rem; /* Make text bigger */
-    padding: 15px 0;   /* More space to tap */
-    width: 100%;       /* Full width tap area */
+    font-size: 1.2rem;
+    padding: 15px 0;
+    width: 100%;
     text-align: center;
 }
 
@@ -561,24 +518,19 @@ footer {
     }
 }
 
-/* =========================================
-   10. MISSION SECTION (New Addition)
-   ========================================= */
 .mission-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Text takes more space, Image takes less */
+    grid-template-columns: 1.2fr 1fr;
     gap: 80px;
     align-items: flex-start;
-    margin-top: 100px; /* Spacing between Vision and Mission */
+    margin-top: 100px;
 }
 
-/* Flip the decorative border for the right-side image */
 .mission-grid .about-image-container::before {
     left: auto;
     right: -20px; 
 }
 
-/* Mobile Responsiveness for Mission Section */
 @media (max-width: 768px) {
     .mission-grid {
         grid-template-columns: 1fr;
@@ -586,15 +538,11 @@ footer {
         margin-top: 50px;
     }
 
-    /* Keeps the image on top on mobile devices */
     .mission-grid .about-image-container {
         order: -1; 
     }
 }
 
-/* =========================================
-   11. PORTFOLIO HOVER EFFECTS (New Addition)
-   ========================================= */
 .portfolio-item {
     position: relative;
     overflow: hidden;
@@ -609,34 +557,31 @@ footer {
     transition: transform 0.5s ease;
 }
 
-/* Overlay that holds the text */
 .portfolio-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 18, 51, 0.9); /* Dark Navy with transparency */
+    background: rgba(0, 18, 51, 0.9);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Hidden by default */
+    opacity: 0;
     transition: opacity 0.4s ease;
     padding: 20px;
     text-align: center;
 }
 
-/* Hover Actions */
 .portfolio-item:hover .portfolio-overlay {
-    opacity: 1; /* Show on hover */
+    opacity: 1;
 }
 
 .portfolio-item:hover .portfolio-img {
-    transform: scale(1.1); /* Zoom effect on image */
+    transform: scale(1.1);
 }
 
-/* Text Styling inside the overlay */
 .portfolio-overlay h3 {
     color: #D4AF37;
     font-family: 'Georgia', serif;
@@ -659,16 +604,13 @@ footer {
     font-size: 1.1rem;
 }
 
-/* =========================================
-   12. CUSTOM POPUP MODAL (New Addition)
-   ========================================= */
 .custom-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 18, 51, 0.85); /* Dark Navy transparency */
+    background: rgba(0, 18, 51, 0.85);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -686,11 +628,10 @@ footer {
     max-width: 450px;
     width: 90%;
     box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    transform: translateY(30px); /* Start slightly lower */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy effect */
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* State: Active (Visible) */
 .custom-modal-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -700,7 +641,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Modal Content Styling */
 .modal-icon {
     font-size: 3rem;
     color: #D4AF37;
@@ -737,7 +677,6 @@ footer {
     background: #fff;
 }
 
-/* Define the animation */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -749,7 +688,6 @@ footer {
     }
 }
 
-/* ONLY animate on Desktop (screens wider than 768px) */
 @media (min-width: 769px) {
     main {
         animation: fadeInUp 0.8s ease-out forwards;
@@ -759,20 +697,22 @@ footer {
     }
 }
 
-/* =========================================
-   13. ACTIVE STATE & SCROLL BUTTON (New Addition)
-   ========================================= */
+@media (max-width: 768px) {
+    main, .hero-content {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+    }
+}
 
-/* Keep the gold underline visible for the Active Page */
 .nav-links a.active {
     color: #D4AF37;
 }
 
 .nav-links a.active::after {
-    width: 100%; /* Keeps the underline drawn */
+    width: 100%;
 }
 
-/* Scroll to Top Button Styling */
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
@@ -782,11 +722,11 @@ footer {
     border: none;
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Makes it a perfect circle */
+    border-radius: 50%;
     font-size: 1.2rem;
     cursor: pointer;
     opacity: 0;
-    pointer-events: none; /* Prevents clicking when hidden */
+    pointer-events: none;
     transition: all 0.3s ease;
     z-index: 2000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -798,12 +738,11 @@ footer {
 }
 
 .scroll-top-btn:hover {
-    transform: translateY(-5px); /* Little hop effect */
+    transform: translateY(-5px);
     background: #fff;
     color: #D4AF37;
 }
 
-/* Search Bar Styles */
 .search-container {
     position: relative;
     max-width: 500px;
@@ -813,12 +752,12 @@ footer {
 #searchInput {
     width: 100%;
     padding: 15px 20px;
-    padding-right: 50px; /* Space for icon */
+    padding-right: 50px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #D4AF37;
     color: #fff;
     font-size: 1rem;
-    border-radius: 30px; /* Rounded corners */
+    border-radius: 30px;
     outline: none;
     transition: 0.3s;
 }
@@ -836,11 +775,6 @@ footer {
     color: #D4AF37;
 }
 
-/* =========================================
-   FAQ SECTION STYLING
-   ========================================= */
-
-/* Center the whole section */
 .faq-section {
     margin-top: 100px;
     margin-bottom: 50px;
@@ -848,17 +782,15 @@ footer {
     width: 100%;
 }
 
-/* The container for the cards */
 .faq-container {
-    max-width: 800px; /* Controls width so it doesn't stretch too wide */
+    max-width: 800px;
     margin: 0 auto;
-    text-align: left; /* Keeps text aligned left inside the center box */
+    text-align: left;
 }
 
-/* The Individual Card */
 .faq-card {
-    background: rgba(255, 255, 255, 0.02); /* Very subtle background */
-    border: 1px solid rgba(212, 175, 55, 0.3); /* Dim gold border */
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     margin-bottom: 15px;
     border-radius: 5px;
     overflow: hidden;
@@ -866,53 +798,45 @@ footer {
 }
 
 .faq-card:hover {
-    border-color: #D4AF37; /* Bright gold on hover */
+    border-color: #D4AF37;
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* The Question (Clickable Header) */
 .faq-question {
     padding: 20px;
     cursor: pointer;
     display: flex;
-    justify-content: space-between; /* Pushes icon to the right */
+    justify-content: space-between;
     align-items: center;
-    list-style: none; /* Removes default triangle */
+    list-style: none;
     font-family: 'Georgia', serif;
     font-size: 1.1rem;
     color: #fff;
 }
 
-/* Remove default triangle for Webkit browsers */
 .faq-question::-webkit-details-marker {
     display: none;
 }
 
-/* The Icon (+ sign) */
 .faq-icon {
     color: #D4AF37;
     font-size: 0.9rem;
     transition: transform 0.3s ease;
 }
 
-/* Rotate icon when open */
 .faq-card[open] .faq-icon {
-    transform: rotate(45deg); /* Turns + into x */
+    transform: rotate(45deg);
 }
 
-/* UPDATED FAQ STYLES FOR ANIMATION */
-
-/* The Wrapper (slides open/closed) */
 .faq-answer {
-    overflow: hidden; /* Hides content when closed */
-    transition: all 0.3s ease-out; /* Smooth sliding speed */
+    overflow: hidden;
+    transition: all 0.3s ease-out;
     opacity: 0;
-    max-height: 0; /* Start closed by default logic */
+    max-height: 0;
 }
 
-/* The Content inside (holds the spacing) */
 .faq-answer p {
-    padding: 20px; /* Padding moved here to prevent "jumping" */
+    padding: 20px;
     color: #e0e0e0;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -920,20 +844,15 @@ footer {
     margin: 0;
 }
 
-/* When open, we utilize JS to handle height, but this helper keeps opacity correct */
 .faq-card[open] .faq-answer {
     opacity: 1;
-    /* max-height is handled by JS for perfect sliding */
 }
 
-/* =========================================
-   SEARCH BAR STYLES (Add to style.css)
-   ========================================= */
 .search-container {
     display: flex;
     align-items: center;
     background: transparent;
-    border: 1px solid rgba(212, 175, 55, 0.3); /* Gold border */
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 20px;
     padding: 5px 15px;
     margin-right: 20px;
@@ -951,7 +870,7 @@ footer {
     border: none;
     color: #fff;
     font-family: 'Segoe UI', sans-serif;
-    width: 120px; /* Adjust width as needed */
+    width: 120px;
     outline: none;
     font-size: 0.9rem;
 }
@@ -974,7 +893,6 @@ footer {
     transform: scale(1.1);
 }
 
-/* Mobile Adjustment */
 @media (max-width: 768px) {
     .search-container {
         margin: 10px 0;
@@ -986,54 +904,47 @@ footer {
     }
 }
 
-/* =========================================
-   LISTINGS SEARCH BAR (Clean Version)
-   ========================================= */
 .listing-search-wrapper {
     display: flex;
-    justify-content: center; /* Centers the bar horizontally */
-    margin-bottom: 40px;     /* Adds space between search and the listings */
+    justify-content: center;
+    margin-bottom: 40px;
     width: 100%;
 }
 
 .listing-search-box {
     position: relative;
     width: 100%;
-    max-width: 600px; /* Controls how wide the bar gets */
+    max-width: 600px;
     height: 50px;
     background: transparent;
-    border: 1px solid #D4AF37; /* The single Gold border */
-    border-radius: 25px;       /* Fully rounded corners */
+    border: 1px solid #D4AF37;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     padding: 0 20px;
     transition: all 0.3s ease;
 }
 
-/* Hover Effect */
 .listing-search-box:hover {
-    background: rgba(212, 175, 55, 0.05); /* Subtle glow on hover */
+    background: rgba(212, 175, 55, 0.05);
 }
 
-/* The Magnifying Glass Icon */
 .search-icon {
     color: #D4AF37;
     margin-right: 15px;
     font-size: 1rem;
 }
 
-/* THE FIX: Removes the inner box/border */
 .listing-search-box input {
     flex: 1;
     background: transparent;
-    border: none;      /* <--- Removes the inner box line */
-    outline: none;     /* <--- Removes the blue focus glow */
+    border: none;
+    outline: none;
     color: #fff;
     font-size: 1rem;
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* Placeholder Text Color */
 .listing-search-box input::placeholder {
     color: rgba(255, 255, 255, 0.5);
     font-weight: 300;
